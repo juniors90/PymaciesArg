@@ -41,7 +41,7 @@ with open(PATH / "py_pharms_arg" / "__init__.py") as fp:
 with open("README.md") as fp:
     LONG_DESCRIPTION = fp.read()
 
-with open("requirements/pypharmsarg.txt") as fp:
+with open("requirements/pypharmsarg.txt", "r") as fp:
     REQUIREMENTS = fp.read().strip().split("\n")
 
 with open("requirements/dev.txt") as fp:
