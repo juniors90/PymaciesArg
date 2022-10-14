@@ -42,7 +42,8 @@ with open("README.md") as fp:
     LONG_DESCRIPTION = fp.read()
 
 with open(PATH / "requirements" / "pypharmsarg.txt") as fp:
-    REQUIREMENTS = fp.read().strip().split("\n")
+    for line in fp.readlines():
+        REQUIREMENTS = fp.split("\n")
 
 with open(PATH / "requirements" / "dev.txt") as fp:
     dev_requires = fp.read().strip().split("\n")
