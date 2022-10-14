@@ -1,0 +1,16 @@
+name: datascience
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - matplotlib
+  - pip
+  - requests
+  - tqdm
+  - xlrd
+  - openpyxl
+  - pip:
+    - jupyterlab
+    - pandas
