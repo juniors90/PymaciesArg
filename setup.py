@@ -41,16 +41,16 @@ with open(PATH / "py_pharms_arg" / "__init__.py") as fp:
 with open("README.md") as fp:
     LONG_DESCRIPTION = fp.read()
 
-with open("requirements/pypharmsarg.txt", "r") as fp:
+with open(PATH / "requirements" / "pypharmsarg.txt") as fp:
     REQUIREMENTS = fp.read().strip().split("\n")
 
-with open("requirements/dev.txt") as fp:
+with open(PATH / "requirements" / "dev.txt") as fp:
     dev_requires = fp.read().strip().split("\n")
 
-with open("requirements/docs.txt") as fp:
+with open(PATH / "requirements" / "docs.txt") as fp:
     docs_requires = fp.read().strip().split("\n")
 
-with open("requirements/docstyle.txt") as fp:
+with open(PATH / "requirements" / "docstyle.txt") as fp:
     docstyle_requires = fp.read().strip().split("\n")
 
 
