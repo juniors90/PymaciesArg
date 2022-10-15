@@ -140,3 +140,4 @@ run.sh
 backup.sh
 cmd.sh
 settings.ini
+tests/data
