@@ -36,17 +36,12 @@ from pymacies_arg import (
     trasform_raws,
 )
 
-import settings
+import scripts
 
-from sqlalchemy import create_engine
-
-
-log = logging.getLogger()
-
-# this path is pointing to project/sample_app
+# this path is pointing to project/sample_app_sqlite
 CURRENT_PATH = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
 
-engine = create_engine(settings.setup_data["SQLALCHEMY_DATABASE_URI"])
+log = logging.getLogger()
 
 
 # : configure the command for run pipeline.
@@ -85,9 +80,9 @@ def run_pipeline(date, province) -> None:
 
     # Load
     log.info("Loading")
-    PharmaciesLoader(engine).load_table(paths[0])
-    LocationsLoader(engine).load_table(paths[1])
-    DepartmentsLoader(engine).load_table(paths[2])
+    PharmaciesLoader(scripts.engine).load_table(paths[0])
+    LocationsLoader(scripts.engine).load_table(paths[1])
+    DepartmentsLoader(scripts.engine).load_table(paths[2])
 
     # Done
     log.info("Done!")

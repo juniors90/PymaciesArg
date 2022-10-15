@@ -81,6 +81,10 @@ def trasform_raws(
         The date on run with format YYYY-mm-dd.
     file_paths : str
         The destination location.
+    province : str
+        The province name in UPPERCASE.
+    base_file_dir : Path
+        A base file directory.
 
 
     Return
@@ -119,15 +123,27 @@ def trasform_raws(
     )
 
     date = datetime.strptime(date_str, "%Y-%m-%d").date()
-    file_path_crib = "data/{category}/{year}-{month:02d}/{category}-{day:02d}-{month:02d}-{year}.csv"  # noqa: E501
+    file_path_crib = (
+        "data"
+        + "/{full_category}"
+        + "/{year}-{month:02d}"
+        + "/{category}"
+        + "/{full_category}-{day:02d}-{month:02d}-{year}.csv"
+    )  # noqa: E501
     data_paths = []
     for name in [
         f"pharmacies_{province.lower().replace(' ', '_')}",
-        "locations",
-        "departments",
+        f"locations_{province.lower().replace(' ', '_')}",
+        f"departments_{province.lower().replace(' ', '_')}",
     ]:
+        full_category = name.split("_")
+        category = "_".join(full_category[1:])
         file_path = file_path_crib.format(
-            category=name, year=date.year, month=date.month, day=date.day
+            full_category=full_category[0],
+            category=category,
+            year=date.year,
+            month=date.month,
+            day=date.day,
         )
 
         f_path = base_file_dir / file_path

@@ -15,8 +15,13 @@ exclude codecov
 recursive-exclude tests *
 recursive-exclude requirements *
 recursive-exclude docs *
-recursive-exclude samples_app *
+recursive-exclude sample_app *
 recursive-exclude sample_app *.csv
 recursive-exclude sample_app *.example
 recursive-exclude sample_app *.py
 recursive-exclude sample_app *.sql
+recursive-exclude sample_app_sqlite *
+recursive-exclude sample_app_sqlite *.csv
+recursive-exclude sample_app_sqlite *.example
+recursive-exclude sample_app_sqlite *.py
+recursive-exclude sample_app_sqlite *.sql
