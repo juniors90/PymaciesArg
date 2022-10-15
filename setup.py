@@ -26,7 +26,7 @@ from setuptools import setup  # noqa
 # CONSTANTS
 # =============================================================================
 
-PATH = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
+PATH = pathlib.Path(__file__).absolute().parent
 
 
 REQUIREMENTS = ["pandas==1.5.0", "requests==2.28.1"]
