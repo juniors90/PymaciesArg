@@ -42,16 +42,6 @@ with open("README.md") as fp:
     LONG_DESCRIPTION = fp.read()
 
 
-with open(PATH / "requirements" / "dev.txt") as fp:
-    dev_requires = fp.read().strip().split("\n")
-
-with open(PATH / "requirements" / "docs.txt") as fp:
-    docs_requires = fp.read().strip().split("\n")
-
-with open(PATH / "requirements" / "docstyle.txt") as fp:
-    docstyle_requires = fp.read().strip().split("\n")
-
-
 source = "https://github.com/juniors90/PyPharmsArg"
 tracker = "https://github.com/juniors90/PyPharmsArg/issues"
 donate = "https://www.paypal.com/donate?hosted_button_id=LFAQ7E7TJ4HSY"
@@ -92,9 +82,4 @@ setup(
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    extras_require={
-        "dev": dev_requires,
-        "docs": docs_requires,
-        "docstyle": docstyle_requires,
-    },
 )
