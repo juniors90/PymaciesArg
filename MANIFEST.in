@@ -10,7 +10,13 @@ exclude cmd.sh
 exclude pyproject.toml
 exclude .readthedocs.yaml
 exclude .docstr.yaml
+exclude *.yml
+exclude codecov
 recursive-exclude tests *
 recursive-exclude requirements *
 recursive-exclude docs *
 recursive-exclude samples_app *
+recursive-exclude sample_app *.csv
+recursive-exclude sample_app *.example
+recursive-exclude sample_app *.py
+recursive-exclude sample_app *.sql
