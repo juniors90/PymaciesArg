@@ -1,2 +1,2 @@
-- r sample_app.in
+-r sample_app.in
 pytest
