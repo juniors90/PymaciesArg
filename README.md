@@ -2,7 +2,7 @@ PymaciesArg (Building)
 ======================
 
 [![Build status](https://github.com/juniors90/PymaciesArg/actions/workflows/CI.yml/badge.svg)](https://github.com/juniors90/PymaciesArg/actions)
-[![codecov](https://codecov.io/gh/juniors90/PymaciesArg/branch/main/graph/badge.svg?token=dQvAiO1eWV)](https://codecov.io/gh/juniors90/PymaciesArg)
+[![codecov](https://codecov.io/gh/juniors90/PymaciesArg/branch/main/graph/badge.svg?token=kMzNWlpS4X)](https://codecov.io/gh/juniors90/PymaciesArg)
 ![docstr-cov](https://img.shields.io/endpoint?url=https://jsonbin.org/juniors90/PymaciesArg/badges/docstr-cov)
 [![Forks](https://img.shields.io/github/forks/juniors90/PymaciesArg)](https://github.com/juniors90/PymaciesArg/stargazers)
 [![star](https://img.shields.io/github/stars/juniors90/PymaciesArg?color=yellow)](https://github.com/juniors90/PymaciesArg/network/members)
