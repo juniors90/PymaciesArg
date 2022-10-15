@@ -1,5 +1,5 @@
 PyPharmsArg (Building)
-====================
+======================
 
 [![Build status](https://github.com/juniors90/PyPharmsArg/actions/workflows/CI.yml/badge.svg)](https://github.com/juniors90/PyPharmsArg/actions)
 [![codecov](https://codecov.io/gh/juniors90/PyPharmsArg/branch/main/graph/badge.svg?token=dQvAiO1eWV)](https://codecov.io/gh/juniors90/PyPharmsArg)
