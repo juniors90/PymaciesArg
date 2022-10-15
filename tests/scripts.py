@@ -1,19 +1,19 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file is part of the PyPharmsArg Project
-#     https://github.com/juniors90/PyPharmsArg.
+# This file is part of the PymaciesArg Project
+#     https://github.com/juniors90/PymaciesArg.
 #
 # Copyright (c) 2022. Ferreira Juan David
 # License: MIT
-#   Full Text: https://github.com/juniors90/PyPharmsArg/blob/main/LICENSE
+#   Full Text: https://github.com/juniors90/PymaciesArg/blob/main/LICENSE
 
 # =============================================================================
 # DOCS
 # =============================================================================
 
 """
-PyPharmsArg.
+PymaciesArg.
 
 An extension that registers all pharmacies in Argentina.
 """
@@ -25,7 +25,7 @@ An extension that registers all pharmacies in Argentina.
 import logging
 import os
 
-from py_pharms_arg import TABLE_NAMES
+from pymacies_arg import TABLE_NAMES
 
 from sqlalchemy import create_engine
 

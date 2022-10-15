@@ -6,7 +6,7 @@
 ##  - https://dev.to/epassaro/how-to-keep-track-of-docstring-coverage-of-python-packages-on-ci-41fc
 
 paths:
-  - py_pharms_arg/
+  - pymacies_arg/
 #badge: docs
 exclude: .*/tests/ .*/sample_app/ # regex
 verbose: 2 # int (0-3)

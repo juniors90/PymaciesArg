@@ -1,19 +1,19 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file is part of the PyPharmsArg Project
-#     https://github.com/juniors90/PyPharmsArg.
+# This file is part of the PymaciesArg Project
+#     https://github.com/juniors90/PymaciesArg.
 #
 # Copyright (c) 2022. Ferreira Juan David
 # License: MIT
-#   Full Text: https://github.com/juniors90/PyPharmsArg/blob/main/LICENSE
+#   Full Text: https://github.com/juniors90/PymaciesArg/blob/main/LICENSE
 
 # =============================================================================
 # DOCS
 # =============================================================================
 
 """
-PyPharmsArg.
+PymaciesArg.
 
 An extension that registers all pharmacies in Argentina.
 """
@@ -28,13 +28,13 @@ import pathlib
 
 import pandas as pd
 
-from py_pharms_arg import (
+from pymacies_arg import (
     DEPARTMENTS_TABLE_NAME,
-    DepartamentosLoader,
-    FarmaciasLoader,
+    DepartmentsLoader,
     LOCATIONS_TABLE_NAME,
-    LocalidadesLoader,
+    LocationsLoader,
     PHARMACIES_TABLE_NAME,
+    PharmaciesLoader,
     UrlExtractor,
     extract_raws,
     farmacias_ds,
@@ -76,14 +76,14 @@ def test_extract_trasform_and_load_raws(engine):
     assert isinstance(paths, list)
     df = pd.read_csv(paths[0])
     # Test Load
-    assert FarmaciasLoader(engine).load_table(paths[0]) == df.to_sql(
+    assert PharmaciesLoader(engine).load_table(paths[0]) == df.to_sql(
         PHARMACIES_TABLE_NAME, con=engine, index=False, if_exists="replace"
     )
     df = pd.read_csv(paths[1])
-    assert LocalidadesLoader(engine).load_table(paths[1]) == df.to_sql(
+    assert LocationsLoader(engine).load_table(paths[1]) == df.to_sql(
         LOCATIONS_TABLE_NAME, con=engine, index=False, if_exists="replace"
     )
     df = pd.read_csv(paths[2])
-    assert DepartamentosLoader(engine).load_table(paths[2]) == df.to_sql(
+    assert DepartmentsLoader(engine).load_table(paths[2]) == df.to_sql(
         DEPARTMENTS_TABLE_NAME, con=engine, index=False, if_exists="replace"
     )

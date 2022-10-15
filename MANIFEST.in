@@ -1,7 +1,7 @@
 include LICENSE
 include README.md
 include CHANGELOG.rst
-recursive-include py_pharms_arg *.py
+recursive-include pymacies_arg *.py
 
 exclude tox.ini
 exclude run.sh

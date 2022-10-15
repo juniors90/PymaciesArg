@@ -17,11 +17,11 @@ import sys
 
 # this path is pointing to project/docs/source
 CURRENT_PATH = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
-PyPharmsArg_PATH = CURRENT_PATH.parent.parent
+PymaciesArg_PATH = CURRENT_PATH.parent.parent
 
-sys.path.insert(0, str(PyPharmsArg_PATH))
+sys.path.insert(0, str(PymaciesArg_PATH))
 
-import py_pharms_arg
+import pymacies_arg
 
 # -- Project information -----------------------------------------------------
 
@@ -30,7 +30,7 @@ copyright = f"{datetime.date.today().year}, PyPharmArg"
 author = "Ferreira, Juan David"
 
 # The full version, including alpha/beta/rc tags
-release = py_pharms_arg.__version__
+release = pymacies_arg.__version__
 
 
 # -- General configuration ---------------------------------------------------

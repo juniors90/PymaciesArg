@@ -1,19 +1,19 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file is part of the PyPharmsArg Project
-#     https://github.com/juniors90/PyPharmsArg.
+# This file is part of the PymaciesArg Project
+#     https://github.com/juniors90/PymaciesArg.
 #
 # Copyright (c) 2022. Ferreira Juan David
 # License: MIT
-#   Full Text: https://github.com/juniors90/PyPharmsArg/blob/main/LICENSE
+#   Full Text: https://github.com/juniors90/PymaciesArg/blob/main/LICENSE
 
 # =============================================================================
 # DOCS
 # =============================================================================
 
 """
-PyPharmsArg.
+PymaciesArg.
 
 An extension that registers all pharmacies in Argentina.
 """
@@ -28,10 +28,10 @@ import pathlib
 
 import click
 
-from py_pharms_arg import (
-    DepartamentosLoader,
-    FarmaciasLoader,
-    LocalidadesLoader,
+from pymacies_arg import (
+    DepartmentsLoader,
+    LocationsLoader,
+    PharmaciesLoader,
     extract_raws,
     trasform_raws,
 )
@@ -85,9 +85,9 @@ def run_pipeline(date, province) -> None:
 
     # Load
     log.info("Loading")
-    FarmaciasLoader(engine).load_table(paths[0])
-    LocalidadesLoader(engine).load_table(paths[1])
-    DepartamentosLoader(engine).load_table(paths[2])
+    PharmaciesLoader(engine).load_table(paths[0])
+    LocationsLoader(engine).load_table(paths[1])
+    DepartmentsLoader(engine).load_table(paths[2])
 
     # Done
     log.info("Done!")
