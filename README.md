@@ -25,7 +25,7 @@ Python 3.8+
 ## Dependecies for this project.
 
 - [pandas==1.5.0](https://pandas.pydata.org/) for build the backend.
-- [requests==2.28.1"(https://requests.readthedocs.io/en/latest/) for build the backend.
+- [requests==2.28.1](https://requests.readthedocs.io/en/latest/) for build the backend.
 
 ## intallation
 

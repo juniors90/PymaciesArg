@@ -27,3 +27,4 @@ recursive-exclude example *
 recursive-exclude application *.csv
 recursive-exclude application *.csv
 recursive-exclude application *.py
+recursive-exclude application *.db
