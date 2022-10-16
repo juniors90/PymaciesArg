@@ -1,6 +1,5 @@
 # PymaciesArg
 
-
 [![Build status](https://github.com/juniors90/PymaciesArg/actions/workflows/CI.yml/badge.svg)](https://github.com/juniors90/PymaciesArg/actions)
 [![codecov](https://codecov.io/gh/juniors90/PymaciesArg/branch/main/graph/badge.svg?token=kMzNWlpS4X)](https://codecov.io/gh/juniors90/PymaciesArg)
 [![Documentation Status](https://readthedocs.org/projects/pymaciesarg/badge/?version=latest)](https://pymaciesarg.readthedocs.io/en/latest/?badge=latest)
@@ -12,12 +11,11 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/juniors90/PymaciesArg?color=green)](https://github.com/juniors90/PymaciesArg/graphs/contributors)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-PymaciesArg is a collection of methods for the implementation of Mercado Pago OAuth in Flask.
+PymaciesArg is an extension that registers all pharmacies in Argentina.
 
 ## Features
 
-- [x] [Authentication generation](https://www.mercadopago.com.ar/developers/en/reference/oauth/_oauth_token/post).
-- [x] [Preference generation](https://www.mercadopago.com.ar/developers/en/reference/preferences/_checkout_preferences/post).
+- [x] [Data generation and extration](https://datos.gob.ar/dataset/salud-listado-establecimientos-farmacias).
 
 
 ## Requirements
@@ -26,8 +24,8 @@ Python 3.8+
 
 ## Dependecies for this project.
 
-- [Flask(>=2.0.1)](https://flask.palletsprojects.com/en/2.0.x/) for build the backend.
-- [Requests](https://requests.readthedocs.io/en/latest/) for build the backend.
+- [pandas==1.5.0](https://pandas.pydata.org/) for build the backend.
+- [requests==2.28.1"(https://requests.readthedocs.io/en/latest/) for build the backend.
 
 ## intallation
 
@@ -156,8 +154,13 @@ if __name__ == "__main__":
     ```shell script
     $> (venv) python -m pip install -r requirements/dev.txt
     ```
-
 4. Start the sample app on server locally:
+
+    ```shell script
+    $> (venv) pip install -e .
+    ```
+
+5. Start the sample app on server locally:
 
     ```shell script
     $> (venv) python application/pipeline.py
