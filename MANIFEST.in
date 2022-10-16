@@ -24,5 +24,6 @@ recursive-exclude sample_app_sqlite *
 recursive-exclude sample_app_sqlite *.csv
 recursive-exclude sample_app_sqlite *.py
 recursive-exclude example *
-recursive-exclude example *.csv
-recursive-exclude example *.py
+recursive-exclude application *.csv
+recursive-exclude application *.csv
+recursive-exclude application *.py

@@ -3,10 +3,10 @@ import os
 import pathlib
 
 from pymacies_arg import (
-    PymaciesArg,
-    PharmaciesLoader,
-    LocationsLoader,
     DepartmentsLoader,
+    LocationsLoader,
+    PharmaciesLoader,
+    PymaciesArg,
 )
 
 from sqlalchemy import create_engine

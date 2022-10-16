@@ -13,7 +13,6 @@ Welcome to PymaciesArg's documentation!
     :caption: Contents:
     
     notes/data_exploratory_en.ipynb
-    notes/data_exploratory_es.ipynb
     notes/quickstart
     notes/license
     notes/changelog
