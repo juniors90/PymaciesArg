@@ -12,9 +12,9 @@ Welcome to PymaciesArg's documentation!
     :numbered:
     :caption: Contents:
     
-    notes/introduction
+    notes/data_exploratory_en.ipynb
+    notes/data_exploratory_es.ipynb
     notes/quickstart
-    notes/data_exploratory.ipynb
     notes/license
     notes/changelog
 

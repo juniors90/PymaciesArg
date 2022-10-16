@@ -32,7 +32,7 @@ log = logging.getLogger()
 
 
 class UrlExtractor(object):
-    """Collapse your data into a single data frame.
+    r"""Collapse your data into a single data frame.
 
     Parameters
     ----------
@@ -49,21 +49,25 @@ class UrlExtractor(object):
 
     Examples
     --------
-    >>> from PymaciesArg import UrlExtractor
-    >>> name="farmacias"
+    >>> import pathlib
+    >>> from pymacies_arg import UrlExtractor, Transform, trasform_raws
+    >>> name="pharmacies"
     >>> url="http://datos.salud.gob.ar/dataset\
-             /39117f8f-e2bc-4571-a572-15a6ce7ea9e1\
-             /resource/19338ea7-a492-4af3-b212-18f8f4af9184\
-             /download/establecimientos-farmacias-enero-2021.csv"
+    ... /39117f8f-e2bc-4571-a572-15a6ce7ea9e1\
+    ... /resource/19338ea7-a492-4af3-b212-18f8f4af9184\
+    ... /download/establecimientos-farmacias-enero-2021.csv"
     >>> url_extractor=UrlExtractor(name=name, url=url)
     >>> url_extractor.__repr__()
     '<Extractor for Name: farmacias, URL: <long_url>>'
-    >>> import pandas as pd
-    >>> path_to_csv = url_extractor.extract(date_str="2022-03-27")
+    >>> base_file_dir=pathlib.Path("/path/to/project")
+    >>> path_to_csv = url_extractor.extract(
+    ... date_str="2022-03-28", base_file_dir=base_file_dir)
     >>> path_to_csv
-    PosixPath('/path/to/project/PymaciesArg/data/farmacias/2022-03/farmacias-27-03-2022.csv')
+    PosixPath('/path/to/project/data/pharmacies/2022-03/pharmacies-28-03-2022.csv')
+    >>> import pandas as pd
     >>> df = pd.read_csv(path_to_csv)
-    >>> url_extractor.transform(df)
+    >>> data_transform = Transform()
+    >>> data_transform.transform(df)
                        id  ...  web
     0      70260072329721  ...  NaN
     1      70100352324743  ...  NaN
@@ -78,7 +82,7 @@ class UrlExtractor(object):
     13676  70064272320083  ...  NaN
 
     [13677 rows x 11 columns]
-    >>>
+    >>> trasform_raws(date_str, file_paths, province, base_file_dir)
     """
 
     file_path_crib = "data/{category}/{year}-{month:02d}/{category}-{day:02d}-{month:02d}-{year}.csv"  # noqa: E501

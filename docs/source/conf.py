@@ -25,8 +25,8 @@ import pymacies_arg
 
 # -- Project information -----------------------------------------------------
 
-project = "PyPharmArg"
-copyright = f"{datetime.date.today().year}, PyPharmArg"
+project = "PymaciesArg"
+copyright = f"{datetime.date.today().year}, PymaciesArg"
 author = "Ferreira, Juan David"
 
 # The full version, including alpha/beta/rc tags
@@ -47,6 +47,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     "sphinx.ext.autosummary",
+    "sphinx_tabs.tabs",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,3 +72,9 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 
 master_doc = "index"
+
+
+sphinx_tabs_valid_builders = ["linkcheck"]
+
+
+sphinx_tabs_disable_tab_closing = True

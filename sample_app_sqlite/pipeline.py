@@ -22,7 +22,6 @@ An extension that registers all pharmacies in Argentina.
 # IMPORTS
 # =============================================================================
 
-import logging
 import os
 import pathlib
 
@@ -32,16 +31,14 @@ from pymacies_arg import (
     DepartmentsLoader,
     LocationsLoader,
     PharmaciesLoader,
-    extract_raws,
-    trasform_raws,
+    PymaciesArg,
 )
 
 import scripts
 
+
 # this path is pointing to project/sample_app_sqlite
 CURRENT_PATH = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
-
-log = logging.getLogger()
 
 
 # : configure the command for run pipeline.
@@ -65,27 +62,24 @@ def run_pipeline(date, province) -> None:
     csv : str
         All `.csv` files with data.
     """
+    pymacies = PymaciesArg(date, CURRENT_PATH)
+
     # Extract
-    log.info("Extracting")
-    file_paths = extract_raws(date_str=date, base_file_dir=CURRENT_PATH)
+    scripts.logger.info("Extracting")
+    file_paths = pymacies.extract_raws()
 
     # Transform
-    log.info("Tansform")
-    paths = trasform_raws(
-        date_str=date,
-        province=province,
-        file_paths=file_paths,
-        base_file_dir=CURRENT_PATH,
-    )
+    scripts.logger.info("Tansform")
+    paths = pymacies.trasform_raws(file_paths, province)
 
     # Load
-    log.info("Loading")
+    scripts.logger.info("Loading")
     PharmaciesLoader(scripts.engine).load_table(paths[0])
     LocationsLoader(scripts.engine).load_table(paths[1])
     DepartmentsLoader(scripts.engine).load_table(paths[2])
 
     # Done
-    log.info("Done!")
+    scripts.logger.info("Done!")
 
 
 if __name__ == "__main__":

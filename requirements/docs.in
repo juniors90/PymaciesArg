@@ -4,3 +4,4 @@ nbsphinx==0.8.7
 pandas
 Sphinx==4.3.0
 sphinx-rtd-theme
+sphinx-tabs==3.2.0

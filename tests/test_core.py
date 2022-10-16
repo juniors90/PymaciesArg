@@ -23,7 +23,6 @@ An extension that registers all pharmacies in Argentina.
 # =============================================================================
 
 import datetime
-import os
 import pathlib
 
 import pandas as pd
@@ -36,13 +35,9 @@ from pymacies_arg import (
     PHARMACIES_TABLE_NAME,
     PharmaciesLoader,
     UrlExtractor,
-    extract_raws,
     farmacias_ds,
-    trasform_raws,
 )
 
-# this path is pointing to project/docs/source
-CURRENT_PATH = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
 
 now = datetime.datetime.now()
 year = now.year
@@ -61,17 +56,15 @@ def test_url_extractor():
     assert repr(extractor) == f"<Extractor for Name: {name}, URL: {url}>"
 
 
-def test_extract_trasform_and_load_raws(engine):
+def test_extract_trasform_and_load_raws(engine, pymacies):
     # Test Extract
-    file_paths = extract_raws(date_str=date, base_file_dir=CURRENT_PATH)
+    file_paths = pymacies.extract_raws()
     assert isinstance(file_paths, dict)
     assert isinstance(file_paths["pharmacies"], pathlib.Path)
     # Test Transform
-    paths = trasform_raws(
-        date_str=date,
+    paths = pymacies.trasform_raws(
         province=province,
         file_paths=file_paths,
-        base_file_dir=CURRENT_PATH,
     )
     assert isinstance(paths, list)
     df = pd.read_csv(paths[0])

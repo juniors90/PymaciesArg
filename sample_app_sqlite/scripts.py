@@ -37,7 +37,27 @@ SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
-log = logging.getLogger()
+logging.basicConfig(filename="pipeline.log", encoding="utf-8")
+
+# create logger
+logger = logging.getLogger(name="pymacies_arg")
+logger.setLevel(logging.DEBUG)
+
+# create console handler and set level to debug
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+
+# create formatter
+formatter = logging.Formatter(
+    fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    datefmt="%m/%d/%Y %I:%M:%S %p",
+)
+
+# add formatter to ch
+ch.setFormatter(formatter)
+
+# add ch to logger
+logger.addHandler(ch)
 
 query1 = """CREATE TABLE IF NOT EXISTS pharmacies (
     "id"  INTEGER PRIMARY KEY,
@@ -61,7 +81,7 @@ query3 = """CREATE TABLE IF NOT EXISTS "locations"(
 def create_table():
     with engine.connect() as conn:
         for tname in TABLE_NAMES[0:3]:
-            log.info(f"create table {tname}")
+            logger.info(f"create table {tname}")
             for q in [query1, query2, query3]:
                 conn.execute(f"DROP TABLE IF EXISTS {tname};")
                 conn.execute(q)
