@@ -3,6 +3,7 @@ PymaciesArg (Building)
 
 [![Build status](https://github.com/juniors90/PymaciesArg/actions/workflows/CI.yml/badge.svg)](https://github.com/juniors90/PymaciesArg/actions)
 [![codecov](https://codecov.io/gh/juniors90/PymaciesArg/branch/main/graph/badge.svg?token=kMzNWlpS4X)](https://codecov.io/gh/juniors90/PymaciesArg)
+[![Documentation Status](https://readthedocs.org/projects/pymaciesarg/badge/?version=latest)](https://pymaciesarg.readthedocs.io/en/latest/?badge=latest)
 ![docstr-cov](https://img.shields.io/endpoint?url=https://jsonbin.org/juniors90/PymaciesArg/badges/docstr-cov)
 [![GitHub license](https://img.shields.io/github/license/juniors90/PymaciesArg)](https://github.com/juniors90/PymaciesArg/blob/main/LICENSE)
 [![Forks](https://img.shields.io/github/forks/juniors90/PymaciesArg)](https://github.com/juniors90/PymaciesArg/stargazers)

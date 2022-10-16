@@ -53,7 +53,7 @@ Install
 
 .. code-block:: bash
 
-    $ pip install 
+    $ pip install PymaciesArg
 
 
 Initialization
@@ -131,6 +131,5 @@ ETL - Extract, Transform and Load
 Resources helpers
 -----------------
 
-Flask-FomanticUI provides two helper functions to load `Fomantic UI <https://fomantic-ui.com/>`_
-resources in the template: ``fomantic.load_css()`` and ``fomantic.load_js()``.
-
+`PymaciesArg` provides two helper functions to load data
+from `https://datos.gob.ar <https://datos.gob.ar/dataset/salud-listado-establecimientos-farmacias>`_ via ``pymacies.trasform_raws()`` and ``pymacies.extract_raws()``.
