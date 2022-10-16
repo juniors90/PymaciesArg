@@ -29,11 +29,11 @@ from pymacies_arg import TABLE_NAMES
 
 from sqlalchemy import create_engine
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-base = os.path.dirname(ROOT_DIR)
-SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
-    base, "sample_app_sqlite", "db_data.db"
-)
+# this path is pointing to project/
+PATH = os.path.abspath(os.path.dirname(__file__))
+
+
+SQLALCHEMY_DATABASE_URI = "sqlite:///" + PATH + "/db_data.db"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
